@@ -21,26 +21,31 @@ else
 {
 <div>
     <div class="jumbotron">
-            <p class="lead">
+        <p class="lead">
             <div>
                 <div class="alert alert-primary" role="alert">
-                    <p><strong>Ваш объект размещения: </strong> @UserInfo.Organization</p>
-                    <p><strong>Имя: </strong> @UserInfo.FirstName</p>
-                    <p><strong>Фамилия: </strong> @UserInfo.LastName</p>
-                    <p><strong>Отчество: </strong> @UserInfo.MiddleName</p>
+                    <div class="alert alert-primary" role="alert"> 
+                        <p><strong>Ваш объект размещения: </strong> @UserInfo.Organization</p>
+                        <p><strong>Имя: </strong> @UserInfo.FirstName</p>
+                        <p><strong>Фамилия: </strong> @UserInfo.LastName</p>
+                        <p><strong>Отчество: </strong> @UserInfo.MiddleName</p>
 
-                    <p><strong>Логин: </strong> @UserInfo.Email</p>
-                    <p><strong>Пароль: </strong> @UserInfo.Password</p>
+                        <p><strong>Логин: </strong> @UserInfo.Email</p>
+                        <p><strong>Пароль: </strong> @UserInfo.Password</p>
 
-                    <p>Перейдите на <a href="@ZammadServerAddress" class="alert-link">портал поддержки</a> и
+                        <p>Перейдите на <a href="@ZammadServerAddress" class="alert-link">портал поддержки</a> и
                         авторизуйтесь с указанными выше логином и паролем.</p>
-
+                    </div>
                      <div class="alert alert-danger" role="alert">
-                       <p><strong>Обязательно</strong> скопируйте или запишите пароль!</p>
+                        <p><strong>Обязательно</strong> скопируйте или запишите пароль!</p>
+                    </div>
+
+                    <div class="alert alert-primary" role="alert"> 
+                        <p><strong>Телефон техподдержки: </strong><a class="btn btn-primary" href="tel:@PhoneNumberOfSupportService">@PhoneNumberOfSupportService</a></p>
                     </div>
                 </div>
             </div>
-            </p>
+        </p>
     </div>
 </div>
 }
@@ -52,6 +57,7 @@ else
     [Parameter]
     public UserCreateDto? UserInfo { get; set; }
     public string? ZammadServerAddress;
+    public string? PhoneNumberOfSupportService;
 
     protected override async Task OnInitializedAsync()
     {
@@ -60,6 +66,7 @@ else
 
         UserInfo = await CreateUserAsync(new JwtSecurityToken(CustomHttpContext.AuthorizationToken));
         ZammadServerAddress = Configuration.GetValue<string>("ZammadServerAddress");
+        PhoneNumberOfSupportService = Configuration.GetValue<string>("PhoneNumberOfSupportService");
     } 
 
     [NonAction]
