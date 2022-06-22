@@ -1,14 +1,11 @@
-﻿using ZammadAPI.Infrastructure.Extensions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
-using System.Security.Claims;
+﻿using System.Web;
 
 namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 {
     public class CustomHttpContext
     {
         private readonly HttpContext _httpContext;
-        public string AuthorizationToken { get; }
+        public string? AuthorizationToken { get; }
         public CustomHttpContext(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor is null)
@@ -16,9 +13,13 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 
             if (httpContextAccessor.HttpContext is null)
                 throw new ArgumentNullException(nameof(httpContextAccessor.HttpContext));
-
+            
             _httpContext = httpContextAccessor.HttpContext;
-            AuthorizationToken = _httpContext.Request.Headers.Authorization[0].ClearOf(authorizationType: "bearer");
+
+            if (_httpContext.Request.QueryString.Value is null)
+                throw new ArgumentNullException(nameof(_httpContext));
+
+            AuthorizationToken = HttpUtility.ParseQueryString(_httpContext.Request.QueryString.Value).Get("token");
         }
     }
 }

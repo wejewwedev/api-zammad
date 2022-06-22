@@ -5,9 +5,9 @@ namespace ZammadAPI.Data.ZammadModels
     public class Escalation
     {
         [JsonPropertyName("criteria")]
-        public Criteria Criteria { get; set; }
+        public Criteria? Criteria { get; set; }
 
         [JsonPropertyName("channel")]
-        public Channel Channel { get; set; }
+        public Channel? Channel { get; set; }
     }
 }

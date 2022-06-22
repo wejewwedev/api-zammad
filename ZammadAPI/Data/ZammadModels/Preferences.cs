@@ -5,10 +5,10 @@ namespace ZammadAPI.Data.ZammadModels
     public class Preferences
     {
         [JsonPropertyName("notification_config")]
-        public NotificationConfig NotificationConfig { get; set; }
+        public NotificationConfig? NotificationConfig { get; set; }
 
         [JsonPropertyName("locale")]
-        public string Locale { get; set; }
+        public string? Locale { get; set; }
 
         [JsonPropertyName("intro")]
         public bool Intro { get; set; }

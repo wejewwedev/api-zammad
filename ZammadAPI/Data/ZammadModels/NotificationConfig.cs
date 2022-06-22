@@ -5,6 +5,6 @@ namespace ZammadAPI.Data.ZammadModels
     public class NotificationConfig
     {
         [JsonPropertyName("matrix")]
-        public Matrix Matrix { get; set; }
+        public Matrix? Matrix { get; set; }
     }
 }

@@ -1,7 +1,7 @@
-﻿using ZammadAPI.Data.Dtos.Zammad;
-using ZammadAPI.Data.ZammadModels;
+﻿using ZammadAPI.Data.ZammadModels;
 using System.Threading.Tasks;
 using ZammadAPI.Infrastructure.Extensions;
+using ZammadAPI.Data.Dtos.Zammad;
 
 namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 {

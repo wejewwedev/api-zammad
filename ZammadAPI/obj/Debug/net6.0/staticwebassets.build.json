@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zi8KKA8bSEBGEA92O4vl+VfB+6lcx+bDD+xYMr/EH6U=",
+  "Hash": "rSsupnmqkvES2i+tom7O2U3BxUwylezz9grA+9Lx51w=",
   "Source": "ZammadAPI",
   "BasePath": "_content/ZammadAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ZammadAPI\\wwwroot",
       "Source": "ZammadAPI",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ZammadAPI.styles.css",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ZammadAPI.styles.css",
       "SourceId": "ZammadAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "ZammadAPI.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ZammadAPI.styles.css"
+      "OriginalItemSpec": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ZammadAPI.styles.css"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ZammadAPI.bundle.scp.css",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ZammadAPI.bundle.scp.css",
       "SourceId": "ZammadAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "ZammadAPI.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ZammadAPI.bundle.scp.css"
+      "OriginalItemSpec": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ZammadAPI.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\site.css",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\css\\site.css",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\favicon.ico",
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\favicon.ico",
       "SourceId": "ZammadAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mypk\\Desktop\\done\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
       "BasePath": "_content/ZammadAPI",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -15,51 +14,50 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             _httpClient = httpClientFactory.CreateClient() ?? throw new ArgumentNullException(nameof(httpClientFactory));
         }
 
-        public async Task<T> Get<T>(Uri uri, string jwtToken)
+        public async Task<T> Get<T>(Uri uri, string token)
            where T : class, new()
         {
             if (uri is null)
                 throw new ArgumentNullException(nameof(uri));
 
-            if (string.IsNullOrEmpty(jwtToken))
-                throw new ArgumentException($"'{nameof(jwtToken)}' cannot be null or empty.", nameof(jwtToken));
+            if (string.IsNullOrEmpty(token))
+                throw new ArgumentException($"'{nameof(token)}' cannot be null or empty.", nameof(token));
 
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
-            request.Headers.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, jwtToken);
+
+            request.Headers.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
 
             return await SendRequestWithoutContentAsync<T>(request);
         }
 
-        public async Task<T> Post<T>(Uri uri, string jwtToken, object value)
+        public async Task<T> Post<T>(Uri uri, string token, object value)
         {
             if (uri is null)
                 throw new ArgumentNullException(nameof(uri));
 
-            if (string.IsNullOrEmpty(jwtToken))
-                throw new ArgumentException($"'{nameof(jwtToken)}' cannot be null or empty.", nameof(jwtToken));
+            if (string.IsNullOrEmpty(token))
+                throw new ArgumentException($"'{nameof(token)}' cannot be null or empty.", nameof(token));
 
             if (value is null)
                 throw new ArgumentNullException(nameof(value));
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
-            request.Headers.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, jwtToken);
+            request.Headers.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
             request.Content = new StringContent(JsonSerializer.Serialize(value), Encoding.UTF8, "application/json");
             return await SendRequestAsync<T>(request);
 
         }
         private async Task<T> SendRequestAsync<T>(HttpRequestMessage request)
         {
-            if (request is null)
+            if (request.Content is null)
                 throw new ArgumentNullException(nameof(request));
 
-            var requestJson = await request.Content.ReadAsStringAsync();
-            
             var response = _httpClient.Send(request);
-
-            var json = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Something was wrong");
+
+            var json = await response.Content.ReadAsStringAsync();
 
             return JsonSerializer.Deserialize<T>(json);
         }

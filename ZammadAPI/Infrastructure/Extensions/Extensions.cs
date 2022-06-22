@@ -1,9 +1,9 @@
-﻿using ZammadAPI.Data.Dtos.Zammad;
-using ZammadAPI.Infrastructure.Exceptions;
+﻿using ZammadAPI.Infrastructure.Exceptions;
 using ZammadAPI.Pages;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Threading.Tasks;
+using ZammadAPI.Data.Dtos.Zammad;
 
 namespace ZammadAPI.Infrastructure.Extensions
 {
@@ -51,16 +51,19 @@ namespace ZammadAPI.Infrastructure.Extensions
 
             return model;
         }
-        public static string ClearOf(this string str, string authorizationType)
-        {
-            if (str.ToLower().Contains("basic"))
-                return str.Remove(0, 5).Trim();
+        //public static string ClearOf(this string str)
+        //{
+        //    if (str.ToLower().Contains("basic"))
+        //        return str.Remove(0, 5).Trim();
 
-            if (str.ToLower().Contains("bearer"))
-                return str.Remove(0, 6).Trim();
+        //    if (str.ToLower().Contains("bearer"))
+        //        return str.Remove(0, 6).Trim();
 
-            return str;
-        }
+        //    if (str.ToLower().Contains("?token="))
+        //        return str.Remove(0, 7).Trim();
+
+        //    return str;
+        //}
 
     }
 }

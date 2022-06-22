@@ -13,52 +13,78 @@
 
 @page "/support"
 
-<h1>Support</h1>
-
 @if(UserInfo is null)
 {
     <p>Something wrong</p>    
 }
 else
 {
-   
 <div>
-    <p>Объект размещения: @UserInfo.Organization</p>
-    <p>Имя: @UserInfo.FirstName</p>
-    <p>Фамилия: @UserInfo.LastName</p>
-    <p>Отчество: @UserInfo.MiddleName</p>
-    <p>Почта: @UserInfo.Email</p>
-    <p>Пароль: @UserInfo.Password</p>
+        <p>Ваш объект размещения: @UserInfo.Organization</p>
+        <p>Имя: @UserInfo.FirstName</p>
+        <p>Фамилия: @UserInfo.LastName</p>
+        <p>Отчество: @UserInfo.MiddleName</p>
 
-    <p>Перейдите на портал поддержки и введите вашу почту и пароль в соответствующие поля</p>
-    <p>Затем нажмите кнопку Sign in</p>
+        <p>Логин для авторизации: @UserInfo.Email</p>
+        <p>Пароль: @UserInfo.Password</p>
 
-    <p><a href="https://www.google.com/">Ссылка на портал поддержки</a></p>
+        <p>Для обращения в поддержку перейдите на портал поддержки и авторизуйтесь, используя предоставленные для входа данные</p>
+
+        <a href="@ZammadServerAddress" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Портал поддержки</a>
+
+
+@*    <div class="jumbotron">
+        <h1 class="display-3">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
+                  calling extra attention to featured content or information.</p>
+        <hr class="my-2">
+        <p>It uses utility classes for typography and
+     spacing to space content out within the larger container.</p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
+        </p>
+    </div>*@
 </div>
 
 }
 @code {
-        [Inject]
-        private CustomHttpContext CustomHttpContext { get; set; }
-        [Inject]
-        private SecurePasswordHasher SecurePasswordHasher { get; set; }
-        [Parameter]
-        public UserCreateDto UserInfo { get; set; }
+    [Inject]
+    private CustomHttpContext? CustomHttpContext { get; set; }
+    [Inject]
+    private SecurePasswordHasher? SecurePasswordHasher { get; set; }
+    [Parameter]
+    public UserCreateDto? UserInfo { get; set; }
+    public string? ZammadServerAddress;
 
     protected override async Task OnInitializedAsync()
     {
+        if (CustomHttpContext is null)
+            throw new ArgumentNullException(nameof(CustomHttpContext));
+
         UserInfo = await CreateUserAsync(new JwtSecurityToken(CustomHttpContext.AuthorizationToken));
+        ZammadServerAddress = Configuration.GetValue<string>("ZammadServerAddress");
     } 
 
     [NonAction]
-    public async Task<UserCreateDto> CreateUserAsync(JwtSecurityToken token)
+    public async Task<UserCreateDto> CreateUserAsync(JwtSecurityToken jwtToken)
     {
-        if (token is null)
-            throw new ArgumentNullException(nameof(token));
+        if (jwtToken is null)
+            throw new ArgumentNullException(nameof(jwtToken));
 
         UserCreateDto userDto = new();
 
-        userDto.PopulateObjectFromJwtToken(token);
+        userDto.PopulateObjectFromJwtToken(jwtToken);
+
+        if (userDto.FirstName is null)
+            throw new ArgumentNullException(nameof(userDto.FirstName));
+        if (userDto.LastName is null)
+            throw new ArgumentNullException(nameof(userDto.LastName));
+        if (userDto.MiddleName is null)
+            throw new ArgumentNullException(nameof(userDto.MiddleName));
+        if (userDto.Organization is null)
+            throw new ArgumentNullException(nameof(userDto.Organization));
+        if (userDto.Email is null)
+            throw new ArgumentNullException(nameof(userDto.Email));
 
         // checking if there is a user with this login (login = email) on the zammad 
         // if the user exists then he is redirected to the support portal
@@ -67,9 +93,7 @@ else
         User user = await zammadUserService.SearchByLogin(userDto.Email, Configuration.GetValue<string>("ApiKeyZammadServer"));
 
         if (user is not null)
-        {
             NavigationManager.NavigateTo($"{Configuration.GetValue<string>("ZammadServerAddress")}");
-        }
 
         userDto.Password = SecurePasswordHasher.Hash(userDto.FirstName, userDto.LastName, userDto.MiddleName, userDto.Organization, userDto.Email);
 
