@@ -20,21 +20,29 @@
 else
 {
 <div>
-        <p>Ваш объект размещения: @UserInfo.Organization</p>
-        <p>Имя: @UserInfo.FirstName</p>
-        <p>Фамилия: @UserInfo.LastName</p>
-        <p>Отчество: @UserInfo.MiddleName</p>
+    <div class="jumbotron">
+            <p class="lead">
+            <div>
+                <div class="alert alert-primary" role="alert">
+                    <p><strong>Ваш объект размещения: </strong> @UserInfo.Organization</p>
+                    <p><strong>Имя: </strong> @UserInfo.FirstName</p>
+                    <p><strong>Фамилия: </strong> @UserInfo.LastName</p>
+                    <p><strong>Отчество: </strong> @UserInfo.MiddleName</p>
 
-        <p>Логин для авторизации: @UserInfo.Email</p>
-        <p>Пароль: @UserInfo.Password</p>
+                    <p><strong>Логин: </strong> @UserInfo.Email</p>
+                    <p><strong>Пароль: </strong> @UserInfo.Password</p>
 
-        <p>Для обращения в поддержку перейдите на портал поддержки и авторизуйтесь, используя предоставленные для входа данные</p>
+                    <p>Перейдите на <a href="@ZammadServerAddress" class="alert-link">портал поддержки</a> и
+                        авторизуйтесь с указанными выше логином и паролем.</p>
 
-        <a href="@ZammadServerAddress" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Портал поддержки</a>
-
+                     <div class="alert alert-danger" role="alert">
+                       <p><strong>Обязательно</strong> скопируйте или запишите пароль!</p>
+                    </div>
+                </div>
+            </div>
+            </p>
+    </div>
 </div>
-
-
 }
 @code {
     [Inject]

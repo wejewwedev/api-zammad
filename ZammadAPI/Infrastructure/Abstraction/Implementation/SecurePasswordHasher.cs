@@ -18,10 +18,9 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             if (string.IsNullOrEmpty(email))
                 throw new ArgumentException($"'{nameof(email)}' cannot be null or empty.", nameof(email));
 
-            var bytes = Encoding.UTF8.GetBytes(firstName + lastName + middleName + organization + email);
-            var hash = SHA256.HashData(bytes);
-            return Convert.ToBase64String(hash);
-        }
+            var hash = SHA256.HashData(Encoding.UTF8.GetBytes(firstName + lastName + middleName + organization + email));
 
+            return Convert.ToBase64String(hash).Substring(0, 10);
+        }
     }
 }

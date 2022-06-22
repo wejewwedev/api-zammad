@@ -45,7 +45,6 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             request.Headers.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme, token);
             request.Content = new StringContent(JsonSerializer.Serialize(value), Encoding.UTF8, "application/json");
             return await SendRequestAsync<T>(request);
-
         }
         private async Task<T> SendRequestAsync<T>(HttpRequestMessage request)
         {
@@ -78,7 +77,7 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 
             // json begins and ends with []
             // zammad API return "[]" if there is no user with the received data
-            // if return "[]" then return null
+            // if return "[]" then return null and create new user
             // else return json
 
             if (sb.Length <= 4)
@@ -86,8 +85,6 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 
             sb.Remove(0, 1);
             sb.Remove(sb.Length - 1, 1);
-
-            var result = sb.ToString();
 
             return JsonSerializer.Deserialize<T>(sb.ToString());
         }

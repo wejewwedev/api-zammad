@@ -15,12 +15,10 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             _httpService = httpService ?? throw new ArgumentNullException(nameof(httpService));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(httpService));
         }
-
         public async Task Create(UserCreateDto user, string jwtToken)
         {
             UriBuilder uriBuilder = new($"{_configuration.GetValue<string>("ZammadServerAddress")}api/v1/users");
-
-            var result = await _httpService.Post<User>(uriBuilder.Uri, jwtToken, user);
+            await _httpService.Post<User>(uriBuilder.Uri, jwtToken, user);
         }
 
         public async Task<User> SearchByLogin(string login, string token)

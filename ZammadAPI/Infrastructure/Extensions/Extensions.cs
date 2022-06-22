@@ -51,19 +51,5 @@ namespace ZammadAPI.Infrastructure.Extensions
 
             return model;
         }
-        //public static string ClearOf(this string str)
-        //{
-        //    if (str.ToLower().Contains("basic"))
-        //        return str.Remove(0, 5).Trim();
-
-        //    if (str.ToLower().Contains("bearer"))
-        //        return str.Remove(0, 6).Trim();
-
-        //    if (str.ToLower().Contains("?token="))
-        //        return str.Remove(0, 7).Trim();
-
-        //    return str;
-        //}
-
     }
 }
