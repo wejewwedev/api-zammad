@@ -390,11 +390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\myproject\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
+      "projectUniqueName": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
       "projectName": "ZammadAPI",
-      "projectPath": "F:\\myproject\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
+      "projectPath": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
       "packagesPath": "C:\\Users\\mypk\\.nuget\\packages\\",
-      "outputPath": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\",
+      "outputPath": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mypk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -446,7 +446,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Af31cJLJDk6pPjnQkzXJ8zr9GX2iJ5c61j1eFWYdN7HVc1HNpnNnMIMcOZ7FnNM/wlAfnHW1XHJRQ5SXqy2enw==",
+  "dgSpecHash": "0TysYPSz8J4zUVPmI1kA9M0tNpVW2oF2z0uqXz7H7R7a9jJsutPfqDFQtzotkcTnMvj/Lk1/ajG0Slpp2P1Ogw==",
   "success": true,
-  "projectFilePath": "F:\\myproject\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
+  "projectFilePath": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mypk\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
     "C:\\Users\\mypk\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
