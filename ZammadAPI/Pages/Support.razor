@@ -99,6 +99,9 @@ else
         if (user is not null)
             NavigationManager.NavigateTo($"{Configuration.GetValue<string>("ZammadServerAddress")}");
 
+        if (SecurePasswordHasher is null)
+            throw new ArgumentNullException(nameof(SecurePasswordHasher));
+            
         userDto.Password = SecurePasswordHasher.Hash(userDto.FirstName, userDto.LastName, userDto.MiddleName, userDto.Organization, userDto.Email);
 
         await zammadUserService.Create(userDto, Configuration.GetValue<string>("ApiKeyZammadServer"));

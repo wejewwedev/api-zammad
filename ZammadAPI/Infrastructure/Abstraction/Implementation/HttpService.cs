@@ -54,11 +54,16 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             var response = _httpClient.Send(request);
 
             if (!response.IsSuccessStatusCode)
-                throw new Exception("Something was wrong");
+                throw new ArgumentNullException(nameof(response));
 
             var json = await response.Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<T>(json);
+            var result = JsonSerializer.Deserialize<T>(json);
+
+            if (result is null)
+                throw new Exception("Json is null");
+
+            return result;
         }
 
         private async Task<T> SendRequestWithoutContentAsync<T>(HttpRequestMessage request)
@@ -73,12 +78,14 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             sb.Append(await response.Content.ReadAsStringAsync());
 
             if (!response.IsSuccessStatusCode)
-                throw new Exception("Something was wrong");
+                throw new ArgumentNullException(nameof(response));
 
-            // json begins and ends with []
-            // zammad API return "[]" if there is no user with the received data
-            // if return "[]" then return null and create new user
-            // else return json
+            /// <summary> 
+            /// json begins and ends with []
+            /// zammad API return "[]" if there is no user with the received data
+            /// if return "[]" then return null and create new user
+            /// else return json
+            /// </summary>
 
             if (sb.Length <= 4)
                 return null;
