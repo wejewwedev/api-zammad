@@ -390,11 +390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
+      "projectUniqueName": "F:\\myproject\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
       "projectName": "ZammadAPI",
-      "projectPath": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
+      "projectPath": "F:\\myproject\\ZammadAPI\\ZammadAPI\\ZammadAPI.csproj",
       "packagesPath": "C:\\Users\\mypk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mypk\\Desktop\\work\\ZammadAPI\\ZammadAPI\\obj\\",
+      "outputPath": "F:\\myproject\\ZammadAPI\\ZammadAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mypk\\AppData\\Roaming\\NuGet\\NuGet.Config",
