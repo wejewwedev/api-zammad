@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rSsupnmqkvES2i+tom7O2U3BxUwylezz9grA+9Lx51w=",
+  "Hash": "sYL5GZjge3lFrBtGGKNpbjKJV7tKpuEyg9zfImuE8PI=",
   "Source": "ZammadAPI",
   "BasePath": "_content/ZammadAPI",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\images\\ticket_zoom.png",
+      "SourceId": "ZammadAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\myproject\\ZammadAPI\\ZammadAPI\\wwwroot\\",
+      "BasePath": "_content/ZammadAPI",
+      "RelativePath": "images/ticket_zoom.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ticket_zoom.png"
     }
   ]
 }
