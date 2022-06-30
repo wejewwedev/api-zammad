@@ -13,42 +13,22 @@
 
 @page "/support"
 
-@if(UserInfo is null)
-{
-    <p>Something wrong</p>    
-}
-else
-{
-<div>
-    <div class="jumbotron">
-        <p class="lead">
-            <div>
-                <div class="alert alert-primary" role="alert">
-                    <div class="alert alert-primary" role="alert"> 
-                        <p><strong>Ваш объект размещения: </strong> @UserInfo.Organization</p>
-                        <p><strong>Имя: </strong> @UserInfo.FirstName</p>
-                        <p><strong>Фамилия: </strong> @UserInfo.LastName</p>
-                        <p><strong>Отчество: </strong> @UserInfo.MiddleName</p>
-
-                        <p><strong>Логин: </strong> @UserInfo.Email</p>
-                        <p><strong>Пароль: </strong> @UserInfo.Password</p>
-
-                        <p>Перейдите на <a href="@ZammadServerAddress" class="alert-link">портал поддержки</a> и
-                        авторизуйтесь с указанными выше логином и паролем.</p>
-                    </div>
-                     <div class="alert alert-danger" role="alert">
-                        <p><strong>Обязательно</strong> скопируйте или запишите пароль!</p>
-                    </div>
-
-                    <div class="alert alert-primary" role="alert"> 
-                        <p><strong>Телефон техподдержки: </strong><a class="btn btn-primary" href="tel:@PhoneNumberOfSupportService">@PhoneNumberOfSupportService</a></p>
-                    </div>
-                </div>
-            </div>
-        </p>
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h3 class="display-4 fw-bold">@UserInfo?.Organization</h3>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-2"><b class="font-weight-bold">@UserInfo?.FirstName @UserInfo?.MiddleName</b>, вы можете обратиться в службу поддержки используя портал <a href="@ZammadServerAddress">@ZammadServerAddress</a></p>
+        <p class="lead mb-2">Для входа используйте следующие данные:</p>
+        <p class="lead mb-2">Логин: @UserInfo?.Email</p>
+        <p class="lead mb-2">Пароль: @UserInfo?.Password</p>
+        <p class="lead mb-4">Для решения экстренных вопросов вы можете обратиться по телефону: <a href="@PhoneNumberOfSupportService">@PhoneNumberOfSupportService</a></p>
+    </div>
+    <div class="overflow-hidden" style="max-height: 80vh;">
+        <div class="container px-5">
+            <img src="images/ticket_zoom.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        </div>
     </div>
 </div>
-}
+
 @code {
     [Inject]
     private CustomHttpContext? CustomHttpContext { get; set; }
@@ -56,17 +36,19 @@ else
     private SecurePasswordHasher? SecurePasswordHasher { get; set; }
     [Parameter]
     public UserCreateDto? UserInfo { get; set; }
-    public string? ZammadServerAddress;
     public string? PhoneNumberOfSupportService;
+    public string? ZammadServerAddress;
+
+
 
     protected override async Task OnInitializedAsync()
     {
         if (CustomHttpContext is null)
             throw new ArgumentNullException(nameof(CustomHttpContext));
 
-        UserInfo = await CreateUserAsync(new JwtSecurityToken(CustomHttpContext.AuthorizationToken));
         ZammadServerAddress = Configuration.GetValue<string>("ZammadServerAddress");
         PhoneNumberOfSupportService = Configuration.GetValue<string>("PhoneNumberOfSupportService");
+        UserInfo = await CreateUserAsync(new JwtSecurityToken(CustomHttpContext.AuthorizationToken));
     } 
 
     [NonAction]
@@ -105,6 +87,6 @@ else
         userDto.Password = SecurePasswordHasher.Hash(userDto.FirstName, userDto.LastName, userDto.MiddleName, userDto.Organization, userDto.Email);
 
         await zammadUserService.Create(userDto, Configuration.GetValue<string>("ApiKeyZammadServer"));
-        return await Task.FromResult(userDto);
+        return userDto;
     }
 }

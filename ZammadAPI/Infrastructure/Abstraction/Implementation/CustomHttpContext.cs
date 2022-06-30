@@ -6,6 +6,7 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
     {
         private readonly HttpContext _httpContext;
         public string? AuthorizationToken { get; }
+
         public CustomHttpContext(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor is null)
@@ -13,7 +14,7 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
 
             if (httpContextAccessor.HttpContext is null)
                 throw new ArgumentNullException(nameof(httpContextAccessor.HttpContext));
-            
+
             _httpContext = httpContextAccessor.HttpContext;
 
             if (_httpContext.Request.QueryString.Value is null)
