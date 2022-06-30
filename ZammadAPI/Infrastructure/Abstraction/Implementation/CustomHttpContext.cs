@@ -6,6 +6,7 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
     {
         private readonly HttpContext _httpContext;
         public string? AuthorizationToken { get; }
+        public bool TokenIsReceived;
 
         public CustomHttpContext(IHttpContextAccessor httpContextAccessor)
         {
@@ -20,7 +21,23 @@ namespace ZammadAPI.Infrastructure.Abstraction.Implementation
             if (_httpContext.Request.QueryString.Value is null)
                 throw new ArgumentNullException(nameof(_httpContext));
 
-            AuthorizationToken = HttpUtility.ParseQueryString(_httpContext.Request.QueryString.Value).Get("token");
+            /// <summary> 
+            /// Проверяем, пришел ли токен из приложения
+            /// Если нет, присваиваем переменной JwtTokenIsValid false
+            /// Если пришел, true
+            /// </summary>
+
+            var jwtToken = HttpUtility.ParseQueryString(_httpContext.Request.QueryString.Value).Get("token");
+
+            if (string.IsNullOrEmpty(jwtToken))
+            {
+                TokenIsReceived = false;
+            }
+            else
+            {
+                AuthorizationToken = jwtToken;
+                TokenIsReceived = true;
+            }
         }
     }
 }
